@@ -12,50 +12,11 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
         <link rel="stylesheet" href="{% static 'css/screen.css' %}" media="screen, projection"/>
-        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.css' %}"/>
-        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/ie10-viewport-bug-workaround.css' %}"/>
-        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/navbar.css' %}"/>
-
-
 
         {% block extra_head %}{% endblock extra_head %}
 
     </head>
     <body id="{% block body_id %}{% endblock %}" class="{% block body_class %}{% endblock %}">
         {% block content %}{% endblock content %}
-        <div class="container">
-
-      <!-- Static navbar -->
-            <nav class="navbar navbar-default">
-              <div class="container-fluid">
-                <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-                  <a class="navbar-brand" href="#">42 Coffe cups</a>
-                </div>
-               </div><!--/.container-fluid -->
-            </nav>
-
-      <!-- Main component for a primary marketing message or call to action -->
-            <div class="my_jumbotron jumbotron">
-                <h3 class="cont"><strong>Contacts</strong></h1>
-                <div class="mef_div">
-                    <p><strong>Name</strong> : Oleg</p>
-                    <p><strong>Surname</strong> : Vunuk</p>
-                    <p><strong>Date of birth</strong> : 02.09.1989</p>
-                    <p><strong>About me</strong> :  I am from Lviv,love sport</p>
-                </div>
-                <div class="mefdiv_1">
-                    <p><strong>Email</strong> : mefvunuk@gmail.com</p>
-                    <p><strong>Jabber</strong> : mefvunuk@42cc.co</p>
-                    <p><strong>Skype</strong> : --- </p>
-                    <p><strong>Other contacts</strong> : ---</p>
-                </div>
-            </div> 
-        </div>   
     </body>
 </html>
