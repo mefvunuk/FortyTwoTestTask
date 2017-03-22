@@ -13,7 +13,7 @@ class SomeTests(TestCase):
         """Test for the view returning hard-coded data for the template"""
 
         found = resolve('/')
-        self.assertEqual(found.func, 'Home_view')
+        self.assertEqual(found.func.__name__, 'Home_view')
 
         self.client = Client()
         url = reverse("home")
