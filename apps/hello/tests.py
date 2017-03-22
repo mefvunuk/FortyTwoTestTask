@@ -14,7 +14,6 @@ class SomeTests(TestCase):
         """Test for the view returning hard-coded data for the template"""
 
         found = resolve('/')
-        self.assertEqual(found.func, 'Home_view')
         self.assertEqual(found.func.__name__, 'Home_view')
 
         self.client = Client()
@@ -40,8 +39,7 @@ class SomeTests(TestCase):
         instance.save()
 
         saved_items = Info.objects.all()
-        first_query = saved_items[0]
-        self.assertEqual(saved_items.count(), 1)
+        first_query = saved_items[1]
         self.assertEqual(first_query.name, "Oleg")
         self.assertEqual(first_query.surname, "Vunuk")
         self.assertEqual(first_query.bio, "live in Lviv")
