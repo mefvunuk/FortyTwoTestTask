@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.test import Client
 from django.core.urlresolvers import reverse, resolve
+from .models import Info
 # Create your tests here.
 
 
@@ -22,3 +23,25 @@ class SomeTests(TestCase):
         self.assertIn(b'Oleg', response.content)
         self.assertIn(b'Vunuk', response.content)
         self.assertIn(b'mefvunuk@gmail.com', response.content)
+
+    def test_the_model_Info(self):
+        """Test the model"""
+
+        instance = Info()
+        instance.name = 'Oleg'
+        instance.surname = 'Vunuk'
+        instance.bio = 'live in Lviv'
+        instance.email = 'mefvunuk@gmail.com'
+        instance.jabber = 'mefvunuk@42cc.co'
+        instance.contacts = 'None'
+        instance.skype = 'None'
+        instance.save()
+
+        saved_items = Info.objects.all()
+
+        self.assertEqual(saved_items.count(), 1)
+        self.assertEqual(saved_items.name, "Oleg")
+        self.assertEqual(saved_items.surname, "Vunuk")
+        self.assertEqual(saved_items.bio, "live in Lviv")
+        self.assertEqual(saved_items.email, "mefvunuk@gmail.com")
+        self.assertEqual(saved_items.jabber, "mefvunuk@42cc.co")
