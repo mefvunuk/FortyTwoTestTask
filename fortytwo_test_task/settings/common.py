@@ -116,6 +116,9 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),
 )
 
+FIXTURE_DIRS = (
+    os.path.join(BASE_DIR, 'assets/fixtures'),
+)
 
 # Template Settings
 TEMPLATE_DIRS = (
