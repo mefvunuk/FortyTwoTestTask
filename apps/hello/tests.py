@@ -30,6 +30,7 @@ class SomeTests(TestCase):
         instance = Info()
         instance.name = 'Oleg'
         instance.surname = 'Vunuk'
+        instance.date = '1989-09-02'
         instance.bio = 'live in Lviv'
         instance.email = 'mefvunuk@gmail.com'
         instance.jabber = 'mefvunuk@42cc.co'
@@ -38,10 +39,10 @@ class SomeTests(TestCase):
         instance.save()
 
         saved_items = Info.objects.all()
-
+        first_query = saved_items[0]
         self.assertEqual(saved_items.count(), 1)
-        self.assertEqual(saved_items.name, "Oleg")
-        self.assertEqual(saved_items.surname, "Vunuk")
-        self.assertEqual(saved_items.bio, "live in Lviv")
-        self.assertEqual(saved_items.email, "mefvunuk@gmail.com")
-        self.assertEqual(saved_items.jabber, "mefvunuk@42cc.co")
+        self.assertEqual(first_query.name, "Oleg")
+        self.assertEqual(first_query.surname, "Vunuk")
+        self.assertEqual(first_query.bio, "live in Lviv")
+        self.assertEqual(first_query.email, "mefvunuk@gmail.com")
+        self.assertEqual(first_query.jabber, "mefvunuk@42cc.co")
