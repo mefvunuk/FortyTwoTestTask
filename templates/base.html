@@ -43,18 +43,20 @@
       <!-- Main component for a primary marketing message or call to action -->
             <div class="my_jumbotron jumbotron">
                 <h3 class="cont"><strong>Contacts</strong></h1>
+                {% for c in info %}
                 <div class="mef_div">
-                    <p><strong>Name</strong> : {{ name }}</p>
-                    <p><strong>Surname</strong> : {{ surname }}</p>
-                    <p><strong>Date of birth</strong> : {{ date }}</p>
-                    <p><strong>About me</strong> :  {{ bio }}</p>
+                    <p><strong>Name</strong> : {{ c.name }}</p>
+                    <p><strong>Surname</strong> : {{ c.surname }}</p>
+                    <p><strong>Date of birth</strong> : {{ c.date }}</p>
+                    <p><strong>About me</strong> :  {{ c.bio }}</p>
                 </div>
                 <div class="mefdiv_1">
-                    <p><strong>Email</strong> : {{ email }}</p>
-                    <p><strong>Jabber</strong> : {{ jabber }}</p>
-                    <p><strong>Skype</strong> : {{ skype }} </p>
-                    <p><strong>Other contacts</strong> : {{ contacts }}</p>
+                    <p><strong>Email</strong> : {{ c.email }}</p>
+                    <p><strong>Jabber</strong> : {{ c.jabber }}</p>
+                    <p><strong>Skype</strong> : {{ c.skype }} </p>
+                    <p><strong>Other contacts</strong> : {{ c.contacts }}</p>
                 </div>
+                {% endfor %}
             </div> 
         </div>   
     </body>
