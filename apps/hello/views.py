@@ -2,6 +2,7 @@ from django.views.generic.base import TemplateView
 
 
 class Home_view(TemplateView):
+    """View"""
 
     template_name = "base.html"
 
