@@ -1,5 +1,4 @@
 from django.views.generic.base import TemplateView
-from .models import Info
 
 
 class Home_view(TemplateView):
@@ -8,5 +7,7 @@ class Home_view(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(Home_view, self).get_context_data(**kwargs)
-        context['info'] = Info.objects.all()
+        context['name'] = 'Oleg'
+        context['surname'] = 'Vunuk'
+        context['email'] = 'mefvunuk@gmail.com'
         return context
