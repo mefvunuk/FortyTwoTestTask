@@ -34,8 +34,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="#">42 Coffe cups</a>
-                  <a class="navbar-brand" href="#">Requests</a>
+                  <a class="navbar-brand" href="{% url 'home' %}">42 Coffe cups</a>
+                  {% block links %}{% endblock %}
                 </div>
                </div><!--/.container-fluid -->
             </nav>
