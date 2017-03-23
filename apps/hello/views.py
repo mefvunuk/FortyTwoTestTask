@@ -3,6 +3,7 @@ from .models import Info
 
 
 class Home_view(TemplateView):
+    """View"""
 
     template_name = "base.html"
 

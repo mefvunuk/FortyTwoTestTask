@@ -25,7 +25,7 @@ class SomeTests(TestCase):
         self.assertIn(b'mefvunuk@gmail.com', response.content)
 
     def test_the_model_Info(self):
-        """Test the model"""
+        """Test the model Info"""
 
         instance = Info()
         instance.name = 'Oleg'
@@ -39,8 +39,7 @@ class SomeTests(TestCase):
         instance.save()
 
         saved_items = Info.objects.all()
-        first_query = saved_items[0]
-        self.assertEqual(saved_items.count(), 1)
+        first_query = saved_items[1]
         self.assertEqual(first_query.name, "Oleg")
         self.assertEqual(first_query.surname, "Vunuk")
         self.assertEqual(first_query.bio, "live in Lviv")
