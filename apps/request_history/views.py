@@ -1,5 +1,5 @@
 from django.views.generic.base import TemplateView
-from datetime import datetime
+from .models import MyRequest
 
 
 class RequestHistory(TemplateView):
@@ -8,5 +8,5 @@ class RequestHistory(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(RequestHistory, self).get_context_data(**kwargs)
-        context.update({'request_method': 'POST', 'request_link': 'http://127.0.0.1:8000/', 'request_date': datetime.now()})
+        context['request_set'] = MyRequest.objects.all()
         return context

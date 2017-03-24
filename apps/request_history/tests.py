@@ -17,19 +17,17 @@ class Request_test(TestCase):
         url = reverse("request_history")
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b'POST', response.content)
-        self.assertIn(b'http://127.0.0.1:8000/', response.content)
 
     def test_the_model_Info(self):
         """Test the model Request_model"""
 
         instance = MyRequest()
-        instance.method = 'POST'
-        instance.link = 'http://127.0.0.1:8000/'
-        instance.date = datetime.now()
+        instance.request_method = 'POST'
+        instance.request_link = 'http://127.0.0.1:8000/'
+        instance.request_time = datetime.now()
         instance.save()
 
         saved_items = MyRequest.objects.all()
         first_query = saved_items[0]
-        self.assertEqual(first_query.method, "POST")
-        self.assertEqual(first_query.link, "http://127.0.0.1:8000/")
+        self.assertEqual(first_query.request_method, "POST")
+        self.assertEqual(first_query.request_link, "http://127.0.0.1:8000/")
