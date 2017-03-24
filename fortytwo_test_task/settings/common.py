@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'south',
 
     'apps.hello',
+    'apps.request_history',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -17,4 +17,3 @@ class Request_test(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'POST', response.content)
         self.assertIn(b'http://127.0.0.1:8000/', response.content)
-        self.assertIn(b'22:51 23.03.2017', response.content)
