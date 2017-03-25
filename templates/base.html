@@ -56,10 +56,10 @@
                       <tbody>
                       {% for r in request_set %}
                         <tr> 
-                          <th scope="row"></th> 
+                          <th scope="row">{{ forloop.counter }}</th> 
                           <td>{{ r.request_method }}</td> 
                           <td>{{ r.request_link }}</td>
-                          <td>{{ r.request_date }}</td> 
+                          <td>{{ r.request_time }}</td> 
                         </tr>
                       {% endfor %}
                       </tbody> 
