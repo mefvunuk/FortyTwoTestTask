@@ -31,3 +31,13 @@ class Request_test(TestCase):
         first_query = saved_items[0]
         self.assertEqual(first_query.request_method, "POST")
         self.assertEqual(first_query.request_link, "http://127.0.0.1:8000/")
+
+    def test_request_middleware_stors_requests(self):
+        """ Test for middleware grab request and save in db"""
+
+        for c in range(4):
+            url = reverse("home")
+            response = self.client.post(url)
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(MyRequest.objects.all().count(), 5)
