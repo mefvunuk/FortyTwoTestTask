@@ -41,3 +41,11 @@ class Request_test(TestCase):
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(MyRequest.objects.all().count(), 5)
+
+    def test_request_to_store_only_10_request_to_database(self):
+        """ Test for middleware grab only 10 request and save in db"""
+        for c in range(15):
+            url = reverse("home")
+            response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(MyRequest.objects.all().count(), 10)
