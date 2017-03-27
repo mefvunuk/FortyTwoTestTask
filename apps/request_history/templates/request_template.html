@@ -1,0 +1,33 @@
+{% extends 'info_template.html' %}
+{% load staticfiles %}
+
+
+{% block links %}{% endblock %}
+
+
+{% block content %}
+ <div class="bs-example" data-example-id="hoverable-table">
+   <table class="table table-hover table_space"> 
+     <thead> 
+       <tr> 
+         <th>N</th> 
+         <th>Request method</th> 
+         <th>Request link</th> 
+         <th>Request date</th> 
+       </tr> 
+     </thead> 
+       <tbody>
+       {% for c in request_set %}
+         <tr> 
+            <th>{{forloop.counter}}</th> 
+            <th>{{ c.request_method }}</th> 
+            <th>{{ c.request_link }}</th> 
+            <th>{{ c.request_time }}</th> 
+         </tr>
+       {% endfor %}
+       </tbody> 
+     </table> 
+ </div>
+{% endblock %}
+
+{% block scripts %}<script type="text/javascript" src="{% static 'js/my_java.js' %}" ></script>{% endblock %}
