@@ -16,4 +16,5 @@ urlpatterns = patterns(
     url(r'^$', Home_view.as_view(), name='home'),
     url(r'^request_history$', RequestHistory.as_view(), name='request_history'),
     url(r'^request_number$', 'apps.request_history.views.my_request_number', name='request_number'),
+    url(r'^request_upload$', 'apps.request_history.views.request_upload', name='request_template'),
 )
