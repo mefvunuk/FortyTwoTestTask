@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}Add data{% endblock title %}
+
+{% block links %}<a class="navbar-brand" href="{% url 'request_history' %}">Requests </a>{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" type="text/css" href="{% static 'datepicker/css/jquery.datetimepicker.css' %}">
+<script src="{% static 'datepicker/js/jquery.datetimepicker.full.min.js' %}"></script>
+
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'image_upload/css/fileinput.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'image_upload/css/few_style.css' %}">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="{% static 'image_upload/js/fileinput.min.js' %}"></script>
+
+{% endblock %}
+
+{% block content %}
+    <form id = 'my_add_info' class="form-group" method="post" enctype="multipart/form-data">
+      <div class="mef_div">
+        <p>
+          <label  for="id_name">Name:</label>
+          <input id="id_name" maxlength="200" name="name" type="text" />
+        </p>
+        <p>
+          <label  for="id_surname">Surname:</label>
+          <input id="id_surname" maxlength="200" name="surname" type="text" />
+        </p>
+        <p>
+          <label  for="datetimepicker1">Date:</label>
+          <input id="datetimepicker1" maxlength="200" name="date" type="text" />
+        </p>
+      </div>
+      <div class="mefdiv_1">
+        <p>
+          <label  for="id_jabber">Jabber:</label>
+          <input id="id_jabber" maxlength="200" name="jabber" type="text" />
+        </p>
+        <p>
+          <label  for="id_skype">Skype:</label>
+          <input id="id_skype" maxlength="200" name="skype" type="text" />
+        </p>
+        <p>
+          <label  for="id_email">Email:</label>
+          <input id="id_email" maxlength="200" name="email" type="text" />
+        </p>
+        </div>
+        <div class="mef_div_img">
+          <span>
+            <div id="kv-avatar-errors-1" class="center-block" style="width:200px;display:none"></div>
+            <div class="kv-avatar center-block" style="width:500px">
+              <label for="photo">Avatar :</label>
+              <input id="photo" name="avatar-1" type="file" class="file-loading">
+            </div>
+          </span>
+          <span>
+            <p>
+              <label  for="id_bio">About your self:</label>
+              <textarea cols="40" id="id_bio" name="bio" rows="10"></textarea>
+            </p>
+            <p>
+              <label  for="id_contacts">Contacts:</label>
+              <textarea cols="40" id="id_contacts" name="contacts" rows="10"></textarea>
+            </p>
+          </span>
+        </div>
+        <div class="batons">
+          <input type="submit" value="Save" class="btn btn-success">
+          <a class="btn btn-success" href="">Cansel</a>
+        </div>
+      </div>
+    </form>
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript" src = "{% static 'datepicker/js/datetime.js' %}"></script>
+<script type="text/javascript" src = "{% static 'image_upload/js/image_script.js' %}"></script>
+{% endblock %}

@@ -2,7 +2,10 @@
 
 {% block title %}42 cofee cups{% endblock title %}
 
-{% block links %}<a class="navbar-brand" href="{% url 'request_history' %}">Requests </a>{% endblock %}
+{% block links %}
+<a class="navbar-brand" href="{% url 'request_history' %}">Requests </a>
+<a class="navbar-brand" href="{% url 'add_data' %}">Add Data</a>
+{% endblock %}
 
 {% block content %}
     <h3 class="cont"><strong>Contacts</strong></h1>
@@ -11,13 +14,18 @@
         <p><strong>Name</strong> : {{ c.name }}</p>
         <p><strong>Surname</strong> : {{ c.surname }}</p>
         <p><strong>Date of birth</strong> : {{ c.date }}</p>
-        <p><strong>About me</strong> :  {{ c.bio }}</p>
     </div>
     <div class="mefdiv_1">
         <p><strong>Email</strong> : {{ c.email }}</p>
         <p><strong>Jabber</strong> : {{ c.jabber }}</p>
         <p><strong>Skype</strong> : {{ c.skype }} </p>
-        <p><strong>Other contacts</strong> : {{ c.contacts }}</p>
+    </div>
+    <div class="mef_div_img">
+      <span><img src="http://www.placehold.it/200x200"/></span>
+      <span>
+      <p><strong>Other contacts</strong> : {{ c.contacts }}</p>
+      <p><strong>About me</strong> :  {{ c.bio }}</p>
+      </span>
     </div>
     {% endfor %}
 {% endblock %}
